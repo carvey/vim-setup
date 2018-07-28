@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Creating ~/.vimrc"
 
 echo "
 execute pathogen#infect()
@@ -40,6 +41,8 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 map <C-n> :NERDTreeFocus<CR>
 map <C-m> :NERDTreeToggle<CR>
 " > ~/.vimrc
+
+echo "Done creating ~/.vimrc"
 
 read -p "Press [Enter] to set up vim plugins and directories, or CTRL-C to exit."
 
