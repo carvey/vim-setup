@@ -1,7 +1,9 @@
-echo “
+#!/bin/bash
+
+echo "
 execute pathogen#infect()
 
-let mapleader=","
+let mapleader=','
 set number
 syntax on
 :imap jk <Esc>
@@ -16,7 +18,6 @@ set incsearch
 set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
-
 :set noexpandtab
 :set copyindent
 :set preserveindent
@@ -25,7 +26,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 :set tabstop=4
 :set autoindent
 :set noswapfile
-filetype plugin indent on 
+filetype plugin indent on
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -35,10 +36,10 @@ let g:airline#extensions#tabline#enabled = 1
 map <C-c> :bd<cr>
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 map <C-n> :NERDTreeFocus<CR>
 map <C-m> :NERDTreeToggle<CR>
-“ > ~/.vimrc
+" > ~/.vimrc
 
 read -p "Press [Enter] to set up vim plugins and directories, or CTRL-C to exit."
 
