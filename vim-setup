@@ -4,7 +4,7 @@ echo "Creating ~/.vimrc"
 echo "
 execute pathogen#infect()
 
-let mapleader=','
+let mapleader=","
 set number
 syntax on
 :imap jk <Esc>
@@ -19,6 +19,7 @@ set incsearch
 set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
+
 :set noexpandtab
 :set copyindent
 :set preserveindent
@@ -26,7 +27,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 :set shiftwidth=4
 :set tabstop=4
 :set autoindent
-:set noswapfile
 filetype plugin indent on
 
 let g:ctrlp_map = '<c-p>'
@@ -37,9 +37,12 @@ let g:airline#extensions#tabline#enabled = 1
 map <C-c> :bd<cr>
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeFocus<CR>
 map <C-m> :NERDTreeToggle<CR>
+
+vnoremap <silent> # :s/^/#/<cr>:noh<cr>
+vnoremap <silent> -# :s/^#//<cr>:noh<cr>
 " > ~/.vimrc
 
 echo "Done creating ~/.vimrc"
@@ -54,6 +57,7 @@ git clone git://github.com/tpope/vim-sensible.git
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vue
 wget http://www.vim.org/scripts/download_script.php?src_id=10873
 mv download_script.php?src_id=10873 autoclose.vim
 mkdir ~/.vim/colors
