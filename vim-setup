@@ -4,7 +4,7 @@ echo "Creating ~/.vimrc"
 echo "
 execute pathogen#infect()
 
-let mapleader=","
+let mapleader=','
 set number
 syntax on
 :imap jk <Esc>
